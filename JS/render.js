@@ -17,7 +17,7 @@ function renderPosts(data) {
     const feedDOM = document.querySelector('main');
     
     //perrasome reikiamo html reiksme
-    feedDOM.innerHTML + HTML;
+    feedDOM.innerHTML = HTML;
     
 }
 export default renderPosts;
