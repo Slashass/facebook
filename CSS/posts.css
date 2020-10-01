@@ -1,0 +1,21 @@
+.post {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #cccccc;
+    
+}
+
+    .post > header {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 50px 1fr 30px;
+
+    }
+    .post > div {
+
+    }
+    .post > footer {
+
+    }
