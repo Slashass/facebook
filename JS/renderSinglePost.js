@@ -7,12 +7,12 @@ function renderSinglePost (data) {
     //validacija
 
     // logika
-    console.log('generuoju viena posta');
-    console.log(data);
+    //console.log('generuoju viena posta');
+    //console.log(data);
 
     return `<div class="post">
-            ${renderHeader()}
-            ${renderContent()}
+            ${renderHeader(data.author, data.postTimestamp)}
+            ${renderContent(data.content)}
             ${renderFooter()}
         </div>`;
 }
