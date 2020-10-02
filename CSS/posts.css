@@ -14,15 +14,23 @@
             width: 100%;
         }
             .post > .post-header > .avatar-link > .avatar {
+                background-size: auto;
                 width: 100%;
+                border-radius: 60%;
+
             }
         .post > .post-header > .post-user {
+        
             
         }
             .post > .post-header > .post-user > .user {
+                text-decoration: none;
+                font-weight: bold;
+                color: #3366FF;
                 
             }
             .post > .post-header > .post-user > .timestamp {
+                color: grey;
                 
             }
         .post > .post-header > .fa {
