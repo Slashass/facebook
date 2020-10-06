@@ -1,27 +1,39 @@
 function renderContentGallery(photoArray) {
-    const maxGallarySize = 4;
-
-    // jei nera duotas foto sarasas
+    // validacijos
+    // jei nera duotas nuotrauku sarasas
     if (!photoArray) {
         return '';
     }
 
-let photosHTML = '';    
-for (let i=0; i<photoArray.length;i++) {
-    if (i>=maxGallarySize) {
-        break;
-    }
-    photosHTML += `<img src="./img/posts/${photoArray[i]}" alt="user post photos">`;
-}
+    // logika
+    const maxGallerySize = 4;
+    const photosCount = photoArray.length;
+    const printablePhotosCount = photosCount > maxGallerySize ? maxGallerySize : photosCount;
 
-    let moreHTML = 0;
-    if (photoArray.length > maxGallarySize) {
-        moreHTML = `<div class="morePhotos">+${photoArray.length - maxGallarySize}</div>`;
+    // generuojame tik reikiama kieki nuotrauku
+    let extraHTML = '';
+    if (photosCount > maxGallerySize) {
+        extraHTML = `data-extra="${photosCount - maxGallerySize}"`;
+        // extraHTML = `<div class="black-hover">+${photosCount - maxGallerySize}</div>`;
     }
 
-    return `<div class="gallery gallery-${photoArray.length > maxGallarySize ? maxGallarySize : photoArray.length}">
-            ${photosHTML}
-            ${moreHTML}
+    let photosHTML = '';
+    for (let i = 0; i < printablePhotosCount; i++) {
+        if (i < printablePhotosCount - 1) {
+            photosHTML += `<div class="img">
+                                <img src="./img/posts/${photoArray[i]}"
+                                    alt="User post gallery picture">
+                            </div>`;
+        } else {
+            photosHTML += `<div class="img" ${extraHTML}>
+                                <img src="./img/posts/${photoArray[i]}"
+                                    alt="User post gallery picture">
+                            </div>`;
+        }
+    }
+
+    return `<div class="gallery gallery-${printablePhotosCount}">
+                ${photosHTML}
             </div>`;
 }
 
