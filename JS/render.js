@@ -3,7 +3,6 @@ import renderSinglePost from './renderSinglePost.js';
 function renderPosts(data) {
     // validacija
 
-
     // logika
     let HTML = '';
 
@@ -21,16 +20,25 @@ function renderPosts(data) {
     // uzdeti norimas JS interakcijas
     const allSeeMoreDOM = document.querySelectorAll('.post .see-more');
 
-    // einame per kiekviena rasta .see-more elementa
     for (let i = 0; i < allSeeMoreDOM.length; i++) {
         const seeMore = allSeeMoreDOM[i];
 
         seeMore.addEventListener('click', function () {
             // nukeliaujame/susirande artimiausia tevini elementa .content
             const contentDOM = seeMore.closest('.content');
-            // tam elementui uzdeti klase show
             contentDOM.classList.add('show');
         });
+    }
+
+    const allSeeLessDOM = document.querySelectorAll('.post .see-less');
+
+    for (let i = 0; i < allSeeLessDOM.length; i++) {
+        const seeLess = allSeeLessDOM[i];
+
+        seeLess.addEventListener('click', () => {
+            const contentDOM = seeLess.closest('.content');
+            contentDOM.classList.remove('show');
+        })
     }
 }
 

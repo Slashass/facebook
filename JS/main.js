@@ -20,3 +20,14 @@ headerDOM.innerHTML = '<span>Labas rytas!</span>';
 headerDOM.innerHTML += '<span>ka tu?</span>';*/
 
 
+
+
+// checkas funkcijai ir clikams
+//function asideClick () {
+  //  console.log('click click...')
+//}
+
+//const asidesDOM = document.querySelectorAll('aside');
+//console.log(asidesDOM);
+
+//asidesDOM[0].addEventListener('click', asideClick)

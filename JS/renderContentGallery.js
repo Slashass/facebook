@@ -13,7 +13,7 @@ function renderContentGallery(photoArray) {
     // generuojame tik reikiama kieki nuotrauku
     let extraHTML = '';
     if (photosCount > maxGallerySize) {
-        extraHTML = `data-extra="${photosCount - maxGallerySize}"`;
+        extraHTML = `data-extra="+${photosCount - maxGallerySize}"`;
         // extraHTML = `<div class="black-hover">+${photosCount - maxGallerySize}</div>`;
     }
 
