@@ -1,8 +1,10 @@
-import posts from './data.js';
+import ajax from './ajax.js';
 import renderPosts from './render.js';
 
+ajax(renderPosts, './data.json');
 
-renderPosts(posts);
+
+//renderPosts(posts);
 
 
 /* renderPost
